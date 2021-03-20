@@ -1,0 +1,718 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+
+/* Reset
+   ----------------------------------------------------------------- */
+
+   html, body, div, … { … }
+  body {
+    margin: 0 auto;
+    padding: 0;
+  }
+  p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+  }
+  img {
+    vertical-align: bottom;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    border: none;
+  }
+  li {
+    list-style: none;
+  }
+   /* Base
+      ----------------------------------------------------------------- */
+   * {
+     box-sizing: border-box;
+   }
+   body {
+     width: 100%;
+     height: 3491px;
+   }
+   body h1, h2, h3, h4, p {
+     font-family: "游ゴシック";
+     font-weight: normal;
+   }
+   #wrap {
+     width: 729px;
+     margin: 0 186.5px 0 184.5px;
+   }
+   button{
+    background-color: #5DC1CF;
+    border-radius: 3px;
+    font-family: "游ゴシック";
+    color: white;
+    border: none;
+   }
+   footer {
+     width: 1100px;
+     height: 50px;
+     margin-top: 60px;
+     color: #FFFFFF;
+     background-color: #323232;
+     font-size: 10px;
+     text-align: center;
+   }
+   /* ==========================================================================
+      Layout
+      ========================================================================== */
+   
+   /* Header
+      ----------------------------------------------------------------- */
+   #header  {
+    background-image: url(../images/メインビジュアル.png);
+     width: 1100px;
+     height: 600px;
+     object-fit: cover;
+     text-align: center;
+   }
+   .wrap-logo {
+    width: 1074px;
+    height: 114px;
+    margin-left: 14px; ;
+   }
+   .logo  img{
+     text-align: none;
+     float: left;
+     margin-top: 24px;
+   }
+   .menu-btn {
+     float: right;
+     position: relative;
+     display: flex;
+     width: 60px;
+     height: 60px;
+     justify-content: center;
+     align-items: center;
+     z-index: 90;
+     border: none;
+     background-color: rgba(50, 50, 50, 0.3);
+     transition: all 0.5s;
+   } 
+   .menu-btn span,
+   .menu-btn span:before,
+   .menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 21px;
+    z-index: 90;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+   }
+   .menu-btn span:before {
+    bottom: 8px;
+   }
+   .menu-btn span:after {
+    top: 8px;
+   }
+   #menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+   }
+   #menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+   }
+   #menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+   }
+   #menu-btn-check {
+    display: none;
+   }
+   .menu-content {
+    float: right;
+    width: 236px;
+    height: 426px;
+    position: relative;
+    top: 0;
+    right: 100%;
+    z-index: 70;
+    background-color: rgba(50, 50, 50, 0.4);
+    backdrop-filter: blur(12px);
+}
+#menu-btn-check:checked ~ .menu-content {
+  right: -60px;/*メニューを画面内へ*/
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+   /* Main
+      ----------------------------------------------------------------- */
+   .reservation {
+     width: 100%;
+
+     height: 173px;
+   }
+   #wrap .btn1{
+      width: 100%;
+      height: 48px;
+      margin-top: 48px;
+      display: block;
+      padding: 0;
+   }
+   #wrap .btn1 p {
+      font-size: 18px;
+      font-weight: normal;
+      position: relative;
+      left: 2px;
+   }
+   .icon:before{
+      content: "";
+      height: 14px;
+      display: inline-block;
+      padding-right: 4px;
+      border-left: 4px solid #323232;
+   }
+   .icon {
+     float: left;
+     font-size: 14px;
+     height: 18px;
+     margin: 14px 0 14px 0;
+   }
+   .fa-phone-alt::before{
+     display: inline-block;
+    padding-right: 4px;
+ }
+   .tel {
+     float: right;
+     font-size: 12px;
+     height: 16px;
+     margin: 16px 0 14px 0;
+     position: relative;
+     right: -1px;
+   }
+   .info-tel::after {
+    content: "";
+    display: block;
+    clear: both;
+ }
+   table {
+     height: 79px;
+     width: 100%;
+     position: relative;
+     right: -1px;
+     border-collapse: collapse;
+   }
+   .biz-hour th, td {
+     color: #323232;
+    font-family: "游ゴシック";
+    font-size: 12px;
+    line-height: 1.3;
+    padding: 0;
+    text-align: center;
+    border: solid 1px #C3C3C3;
+    font-weight: normal;
+   }
+  tr {
+     height: 38px;
+   }
+   span {
+     color: #CC5777;
+   }
+  .holiday {
+     opacity: 0.3;
+   }
+   .hair-style {
+     width: 100%;
+     height: 617px;
+     margin-top: 48px;
+   }
+   .hair-para {
+     height: 51px;
+     text-align: center;
+     margin: 0 auto;
+     position: relative;
+     left: 1px;
+   }
+   .hair-para h1, .staff-para h1 {
+     font-family: 'Times New Roman';
+     height: 33px;
+     font-size: 34px;
+   }
+   .hair-para h2, .staff-para h2 {
+     font-size: 12px;
+     font-weight: normal;
+     height: 16px;
+   }
+   .hair-img {
+    display: block; 
+    margin: 16px auto 0 auto;
+   }
+   .insta {
+     width: 343px;
+     height: 48px;
+     border: solid 2px #5DC1CF;
+     margin: 16px auto 0 auto;
+   }
+   .insta p {
+     width: 227.5px;
+     height: 23px;
+     font-size: 14px;
+     margin: 11px auto 10px auto;
+     text-align: center;
+   }
+   .fa-instagram {
+     float: left;
+     font-size: 1.85em;
+     
+   }
+   .info-wrap {
+     height: 266px;
+     margin-top: 46px;
+     position: relative;
+   }
+   .info-wrap h1 {
+     font-size: 14px;
+     margin-bottom: 4px;
+   }
+   .info-wrap h1:before{
+    content: "";
+    height: 14px;
+    display: inline-block;
+    padding-right: 4px;
+    border-left: 4px solid #323232;
+   }
+   .info-wrap .info {
+     height: 56px;
+     margin-top: 14px;
+     border-bottom: solid 1px#EEEEEE;
+   }
+   .info-details {
+     position: relative;
+     bottom: 2px;
+   }
+   .info p {
+     font-size: 12px;
+   }
+   .info h2 {
+     font-size: 14px;
+   }
+   .more {
+     font-size: 14px;
+     font-weight: normal;
+     color: #5DC1CF;
+     position: absolute;
+     right: 0;
+     bottom: 0;
+   }
+   .coupon-wrap {
+     width: 1100px;
+     height: 338px;
+     margin-top: 46px;
+     position: relative;
+     left: -184.5px;
+     background-color: #F0F0F0;
+   }
+   .coupon-back {
+    margin: 0 auto;
+     width: 730px;
+   }
+   .coupon {
+     display: flex;
+   }
+   .coupon-wrap h1 {
+     font-size: 16px;
+     padding-top: 30px;
+     text-align: center;
+     position: relative;
+     left: -1px;
+   }
+   .coupon li {
+     width: 141px;
+     height: 176px;
+     margin: 24px 51px 0 0;
+     flex: auto;
+     background-color: #ffffff;
+     border: solid 1px #ffffff;
+     border-radius: 10px;
+     position: relative;
+     left: 1px;
+     top: 1px;
+   }
+   .coupon li:nth-child(3) {
+    margin-right: 0;
+  }
+   .coupon li h1 {
+     font-size: 12px;
+   }
+   .cut, .cut-treat, .cut-color {
+     padding-left: 10px;
+   }
+   .coupon li h2{
+     font-size: 12px;
+     padding-top: 8px;
+   }  
+   .coupon li h3 {
+     width: 185px;
+    font-size: 14px;
+    margin-top: 1px;
+    line-height: 20px;
+  }  
+  .coupon li h4 {
+    width: 163px;
+    height: 21px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  .btn  {
+    width: 155px;
+    height: 32px;
+    display: block;
+    margin: 0 auto 13px auto;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 24px;
+  }
+  .btn h5 {
+    width: 155px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+  }
+  .normal-coupon {
+    height: 18px;
+    margin-top: 30px;
+    float: right;
+  }
+  .normal-coupon p {
+    font-size: 14px;
+    float: left;
+    margin-left: 18px;
+  }
+   .care-voice {
+     height: 130px;
+     width: 730px;
+     margin-top: 60px;
+     display: flex;
+   }
+   .care1 {
+     flex: auto;
+     margin-right: 44px;
+   }
+   .care {
+     width: 343px;
+   }
+   .voice {
+     width: 343px;
+     margin-right: 0;
+   }
+   .care-voice::after {
+      content: "";
+      display: block;
+      clear: both;
+   }
+   .staff-wrap {
+     width: 344px;
+     height: 238px;
+     margin: 60px auto 0 auto;
+   }
+   .staff-para {
+     text-align: center;
+   }
+   .staff-para h2 {
+     position: relative;
+     top: 1px;
+   }
+   .staff-member {
+     width: 343px;
+     height: 119px;
+     margin-top: 15px;
+     display: flex;
+   }
+   .staff {
+     height: 119px;
+     margin-right: 7.5px;
+     flex: auto;
+     text-align: center;
+   }
+   .staff04 {
+     margin-right: 0px;
+   }
+   .staff h1 {
+     font-size: 10px;
+     display: block;
+     margin-top: 7px;
+     opacity: 0.6;
+   }
+   .staff p {
+     font-size: 12px;
+     opacity: 0.6;
+     position: relative;
+     top: -2px;
+   }
+   .btn2 {
+     margin-top: 19px;
+     width: 343px;
+     height: 36px;
+     font-size: 14px;
+     color: #707070;
+     opacity: 1;
+     background-color: #ffffff;
+     border: solid 1px #323232;
+     border-radius: 3px;
+     padding: 0 0 0 107px;
+     text-align: left;
+     position: relative;
+     left: 1px;
+   }
+   .shopname {
+     margin: 48px auto 0 auto;
+     width: 131px;
+     height: 66px;
+     position: relative;
+     left: 1px;
+   }
+   .shopname p {
+     margin-top: 10px;
+     font-size: 12px;
+     text-align: center;
+     position: relative;
+     left: -1px;
+   }
+   .access-wrap {
+    width: 730px;
+    height: 515px;
+    margin-top: 16px;
+    text-align: center;
+    position: relative;
+    left: 1px;
+   }
+   .access-wrap h1 {
+     height: 43px;
+     font-size: 14px;
+     margin-top: 13px;
+     line-height: 24.5px;
+   }
+   .access-wrap h2 {
+     height: 18px;
+    font-size: 14px;
+    margin-top: 15px;
+    color: #5DC1CF;
+   }
+   .phone-number {
+     height: 34px;
+     margin-top: 16px;
+   }
+   .phone-number h3 {
+     font-size: 14px;
+     position: relative;
+     left: -1px;
+   }
+   .phone-number h4 {
+     font-size: 10px;
+     position: relative;
+     left: -1px;
+   }
+   .fainsta {
+     float: none;
+     margin-top: 8px;
+     width: 23px;
+     height: 23px;
+   }
+   .option {
+     margin-top: 46px;
+     font-size: 14px;
+     text-align: center;
+   }
+   footer p {
+     padding-top: 15px;
+     position: relative;
+     left: -1px;
+   }
+
+@media (max-width: 670px) {
+/*画面が670pxサイズ以下で適用*/
+  body {
+    max-width: 100%;
+  }
+  #header {
+    background-image: url(../images/メインビジュアルSP.png);
+    max-width: 100%;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+  }
+  .wrap-logo {
+    width: 363px;
+    height: 63.5px;
+    margin-left: 11px;
+  }
+  .logo img {
+    width: 160px;
+    height: 48px;
+    margin-top: 16px;
+  }
+  .menu-content {
+    width: 375px;
+    height: 600px;
+    top: -64px;
+    padding: 0;
+  }
+  .menu-content ul {
+    padding: 70px 0 0 0;
+    max-width: 100%;
+  }
+  #menu-btn-check:checked ~ .menu-content {
+    right: 0;/*メニューを画面内へ*/
+  }
+  #wrap {
+    width: 343px;
+    margin: 0 16px;
+  }
+  .hair-img {
+    max-width: 100%;
+  }
+  .coupon-wrap {
+    max-width: 375px;
+    height: 530px;
+    left: -16px;
+  }
+  .coupon-back {
+    width: 343px;
+  }
+  .coupon-back h1 {
+    padding-top: 16px;
+  }
+  .coupon {
+    flex-direction: column;
+  }
+  .coupon li {
+    width: 343px;
+    height: 122px;
+    margin: 15px 51px 0 0;
+  }
+  .coupon .cut-treat {
+    height: 142px;
+  }
+  .coupon li h3, .coupon li h4 {
+    width: 323px;
+  }
+  .coupon li h4 {
+    margin-top: 0;
+  }
+  .coupon .btn {
+    left: 73px;
+  }
+  .care-voice {
+    max-width: 100%;
+    height: 280px;
+    flex-direction: column;
+  }
+  .access-wrap {
+    width: 323px;
+    margin: 0 10px;
+  }
+  .access-wrap img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  .access-wrap h1 {
+    width: 280px;
+    height: 62px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .access-logo {
+    max-width: 100%;
+  }
+  footer {
+    max-width: 100%;
+  }
+}
+   /* ==========================================================================
+      Object
+      ========================================================================== */
+   
+   /* Component
+      ----------------------------------------------------------------- */
+   
+   /**
+    * Button
+    *
+    * Blah Blah Blah
+    */
+   
+   .c-btn { … }
+   .c-btn--primary {
+     ...
+   }
+   
+   /**
+    * Media
+    */
+   
+   .c-media { … }
+   .c-media__image {
+     ...
+   }
+   
+   /* Project
+      ----------------------------------------------------------------- */
+   
+   /**
+    * Articles
+    */
+   
+   .p-articles { … }
+   .p-article {
+     ...
+   }
+   .p-article__title {
+     ...
+   }
+   
+   /* Utility
+      ----------------------------------------------------------------- */
+   
+   /**
+    * Clearfix
+    */
+   
+   .u-clearfix {
+     ...
+   }
+   
+   /**
+    * Display
+    */
+   
+   .u-block {
+     ...
+   }
+   
+   /**
+    * Margin
+    */
+   
+   .u-mbs { /* Margin-Bottom: Small; */
+     ...
+   }
