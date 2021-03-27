@@ -587,6 +587,13 @@
     width: 343px;
     margin: 0 16px;
   }
+  .hair-style {
+    margin-top: 100px;
+  }
+  .info-wrap {
+    position: relative;
+    top: -200px;
+  }
   .hair-img {
     max-width: 100%;
   }
